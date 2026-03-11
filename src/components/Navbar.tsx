@@ -4,20 +4,52 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const navLinks = [
-  { label: "Story", href: "#story" },
-  { label: "Ecosystem", href: "#ecosystem" },
-  { label: "Why Us", href: "#why-us" },
-  { label: "Vision", href: "#vision" },
+  { label: "Story", href: "#story", sectionId: "story" },
+  { label: "Ecosystem", href: "#ecosystem", sectionId: "ecosystem" },
+  { label: "Why Us", href: "#why-us", sectionId: "why-us" },
+  { label: "Vision", href: "#vision", sectionId: "vision" },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Scroll spy using Intersection Observer
+  useEffect(() => {
+    const sectionIds = navLinks.map((link) => link.sectionId);
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean) as HTMLElement[];
+
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // Find the section that is most visible
+        const visibleEntries = entries.filter((entry) => entry.isIntersecting);
+        if (visibleEntries.length > 0) {
+          // Pick the one closest to top of viewport
+          const sorted = visibleEntries.sort(
+            (a, b) => a.boundingClientRect.top - b.boundingClientRect.top
+          );
+          setActiveSection(sorted[0].target.id);
+        }
+      },
+      {
+        rootMargin: "-20% 0px -60% 0px",
+        threshold: 0,
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -45,14 +77,18 @@ export default function Navbar() {
             <a
               key={link.label}
               href={link.href}
-              className="text-sm text-gray-500 hover:text-black transition-colors"
+              className={`text-sm transition-colors pb-1 border-b-2 ${
+                activeSection === link.sectionId
+                  ? "text-black border-[#aaff00]"
+                  : "text-gray-500 border-transparent hover:text-black"
+              }`}
             >
               {link.label}
             </a>
           ))}
           <a
             href="#contact"
-            className="bg-[#aaff00] text-black text-sm font-semibold px-5 py-2 hover:bg-[#99ee00] transition-colors"
+            className="rounded bg-[#aaff00] text-black text-sm font-semibold px-5 py-2 hover:bg-[#99ee00] transition-colors"
           >
             Get in Touch
           </a>
@@ -84,7 +120,11 @@ export default function Navbar() {
               key={link.label}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="block py-3 text-sm text-gray-600 hover:text-black border-b border-gray-50"
+              className={`block py-3 text-sm border-b border-gray-50 ${
+                activeSection === link.sectionId
+                  ? "text-black font-medium"
+                  : "text-gray-600 hover:text-black"
+              }`}
             >
               {link.label}
             </a>
@@ -92,7 +132,7 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={() => setMenuOpen(false)}
-            className="inline-block mt-4 bg-[#aaff00] text-black text-sm font-semibold px-5 py-2"
+            className="rounded inline-block mt-4 bg-[#aaff00] text-black text-sm font-semibold px-5 py-2"
           >
             Get in Touch
           </a>

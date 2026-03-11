@@ -132,7 +132,7 @@ export default function WhyUsSection() {
               {operatorTags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-xs border border-gray-300 px-3 py-1.5 text-gray-600"
+                  className="text-xs border border-gray-300 px-6 py-1.5 text-gray-600 rounded"
                 >
                   {tag}
                 </span>
@@ -140,7 +140,7 @@ export default function WhyUsSection() {
             </div>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 bg-black text-white text-sm font-semibold px-7 py-3.5 w-fit hover:bg-[#ff3d00] transition-colors"
+              className="rounded inline-flex items-center gap-2 bg-black text-white text-sm font-semibold px-7 py-3.5 w-fit hover:bg-[#ff3d00] transition-colors"
             >
               Speak to Us →
             </a>

@@ -233,7 +233,7 @@ export default function EcosystemSection() {
               <AnimateIn from={brand.reverse ? "right" : "left"} className={brand.reverse ? "lg:order-2" : "lg:order-1"}>
                 <div className="flex items-center gap-4 mb-6">
                   <span
-                    className={`text-xs font-semibold px-3 py-1 ${brand.tagBg} ${brand.tagText}`}
+                    className={`text-xs font-semibold px-6 py-2 rounded ${brand.tagBg} ${brand.tagText}`}
                   >
                     {brand.tag}
                   </span>
@@ -248,7 +248,7 @@ export default function EcosystemSection() {
                 </p>
                 <a
                   href="#"
-                  className={`inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-colors ${brand.ctaBg} ${brand.ctaTextColor} ${brand.ctaHover}`}
+                  className={`rounded inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-colors ${brand.ctaBg} ${brand.ctaTextColor} ${brand.ctaHover}`}
                 >
                   {brand.ctaText} →
                 </a>

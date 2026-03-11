@@ -56,7 +56,7 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto w-full py-20 md:py-28">
         {/* Eyebrow */}
-        <p className="text-xs tracking-[0.3em] text-white/60 uppercase mb-8 md:mb-10">
+        <p className="text-xs tracking-[0.3em] text-white uppercase mb-8 md:mb-10">
           iGaming Infrastructure Group
         </p>
 
@@ -70,13 +70,13 @@ export default function HeroSection() {
         {/* Bottom row */}
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-base md:text-lg text-white/70 max-w-xs leading-relaxed mb-8">
+            <p className="text-base md:text-lg text-white max-w-md leading-relaxed mb-8">
               Four specialist businesses. One connected infrastructure ecosystem
               for the modern iGaming operator.
             </p>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 bg-white text-black text-sm font-semibold px-7 py-3.5 hover:bg-[#ff3d00] transition-colors"
+              className="rounded inline-flex items-center gap-2 bg-white text-black text-sm font-semibold px-7 py-3.5 hover:bg-[#ff3d00] transition-colors"
             >
               Speak to Us →
             </a>
@@ -85,15 +85,19 @@ export default function HeroSection() {
           {/* Brand indicators */}
           <div className="flex flex-wrap items-center gap-4 md:gap-5 text-sm text-white/60">
             {[
-              { num: "01", name: "Betable",     color: "#a7cedf" },
-              { num: "02", name: "Newshore",    color: "#5b6cf9" },
-              { num: "03", name: "APIS Gaming", color: "#ce9e18" },
-              { num: "04", name: "Grace Gaming",color: "#7c3aed" },
+              { num: "01", name: "Betable",      color: "#a7cedf", href: "#betable" },
+              { num: "02", name: "Newshore",     color: "#5b6cf9", href: "#newshore" },
+              { num: "03", name: "APIS Gaming",  color: "#ce9e18", href: "#apis-gaming" },
+              { num: "04", name: "Grace Gaming", color: "#7c3aed", href: "#grace-gaming" },
             ].map((b) => (
-              <span key={b.num} className="flex items-center gap-1.5">
+              <a
+                key={b.num}
+                href={b.href}
+                className="flex items-center gap-1.5 hover:text-white transition-colors"
+              >
                 <span className="font-bold text-xs" style={{ color: b.color }}>{b.num}</span>
                 <span>{b.name}</span>
-              </span>
+              </a>
             ))}
           </div>
         </div>

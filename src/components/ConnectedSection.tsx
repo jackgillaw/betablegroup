@@ -109,7 +109,7 @@ export default function ConnectedSection() {
             <div className="grid grid-cols-2 gap-4">
               {companies.map((company, i) => (
                 <AnimateIn key={company.alt} delay={200 + i * 80}>
-                <div className="bg-gray-50 p-5 rounded-sm shadow">
+                <div className="bg-gray-50 p-5 rounded-sm shadow border-t-8" style={{ borderTopColor: company.color }}>
                   <div className="mb-1 h-10 flex items-center">
                     <Image
                       src={company.logo}
@@ -119,11 +119,10 @@ export default function ConnectedSection() {
                       className={company.logoClass}
                     />
                   </div>
-                  <p className="text-xs text-gray-400 mb-8">{company.role}</p>
+                  <p className="text-xs  mb-8">{company.role}</p>
                   <a
                     href="#"
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2 transition-opacity hover:opacity-80"
-                    style={{ backgroundColor: company.color, color: company.textColor }}
+                    className="rounded inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2 transition-opacity hover:opacity-80 border-1 border-black/50"
                   >
                     Visit →
                   </a>
