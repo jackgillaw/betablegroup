@@ -16,6 +16,7 @@ interface Brand {
   description: string;
   description2: string;
   ctaText: string;
+  ctaHref?: string;
   ctaBg: string;
   ctaTextColor: string;
   ctaHover: string;
@@ -24,20 +25,25 @@ interface Brand {
   cardBg: string;
   capabilities: Capability[];
   reverse: boolean;
+  bgImage?: string;
+  textColor?: string;
+  textColorMuted?: string;
 }
 
 function CapGrid({
   capabilities,
   accentColor,
   cardBg,
+  textColorMuted = "text-gray-400",
 }: {
   capabilities: Capability[];
   accentColor: string;
   cardBg: string;
+  textColorMuted?: string;
 }) {
   return (
     <div>
-      <p className="text-xs tracking-widest text-gray-400 uppercase mb-4">
+      <p className={`text-xs tracking-widest uppercase mb-4 ${textColorMuted}`}>
         Capabilities
       </p>
       <div className="grid grid-cols-2 gap-3">
@@ -82,6 +88,7 @@ const brands: Brand[] = [
     ctaBg: "border border-black",
     ctaTextColor: "text-black",
     ctaHover: "hover:bg-black hover:text-white",
+    ctaHref: "https://betable.com/",
     sectionBg: "bg-[#f3f8fb]",
     accentColor: "#a7cedf",
     cardBg: "bg-gray-50",
@@ -116,7 +123,9 @@ const brands: Brand[] = [
     ctaBg: "bg-[#5b6cf9]",
     ctaTextColor: "text-white",
     ctaHover: "hover:bg-[#4a5ae8]",
+    ctaHref: "https://newshore.com/",
     sectionBg: "bg-[#eef2ff]",
+    bgImage: "/assets/newshore-bg.png",
     accentColor: "#5b6cf9",
     cardBg: "bg-white/70",
     capabilities: [
@@ -135,7 +144,7 @@ const brands: Brand[] = [
     number: "03 / 04",
     logo: (
       <Image
-        src="/assets/api-brand-logo.png"
+        src="/assets/apis-brand-logo-white.png"
         alt="APIS Gaming"
         width={240}
         height={60}
@@ -149,10 +158,14 @@ const brands: Brand[] = [
     ctaText: "Visit APIS Gaming",
     ctaBg: "bg-[#ce9e18]",
     ctaTextColor: "text-white",
+    textColor: "text-white",
+    textColorMuted: "text-white/80",
     ctaHover: "hover:bg-[#b88b14]",
+    ctaHref: "https://apisgaming.com/",
     sectionBg: "bg-[#fdf6e4]",
+    bgImage: "/assets/apis-gaming-bg.png",
     accentColor: "#ce9e18",
-    cardBg: "bg-white/60",
+    cardBg: "bg-white",
     capabilities: [
       { title: "Global Studios", subtitle: "Leading content providers" },
       { title: "Single Integration", subtitle: "One connection point" },
@@ -184,6 +197,7 @@ const brands: Brand[] = [
     ctaBg: "bg-[#7c3aed]",
     ctaTextColor: "text-white",
     ctaHover: "hover:bg-[#6b2ed4]",
+    ctaHref: "https://gracegaming.com/",
     sectionBg: "bg-[#f0ebff]",
     accentColor: "#7c3aed",
     cardBg: "bg-white/60",
@@ -204,17 +218,17 @@ export default function EcosystemSection() {
       <div className="py-20 md:py-24 px-6 md:px-10 bg-white border-t border-gray-100">
         <div className="max-w-7xl mx-auto">
           <AnimateIn>
-          <p className="text-xs tracking-[0.3em] text-gray-400 uppercase mb-6">
-            02 Ecosystem
-          </p>
-          <h2 className="font-black leading-[0.9] mb-6">
-            <span className="block text-6xl md:text-7xl text-black">
-              Four Specialists.
-            </span>
-            <span className="block text-6xl md:text-7xl text-[#aaff00]">
-              One Stack.
-            </span>
-          </h2>
+          <div className="flex flex-col md:flex-row md:items-start md:gap-4 lg:gap-6 mb-6">
+            <span className="font-black leading-none text-3xl md:text-[6.5rem] lg:text-[8rem] text-[#38bdf8] shrink-0 font-light mb-2 md:mb-0">2</span>
+            <h2 className="font-black leading-[0.9]">
+              <span className="block text-6xl md:text-7xl text-black">
+                Four Specialists.
+              </span>
+              <span className="block text-6xl md:text-7xl text-[#38bdf8]">
+                One Stack.
+              </span>
+            </h2>
+          </div>
           <p className="text-base md:text-lg text-gray-600 max-w-xl leading-relaxed">
             Each business focuses on a specific layer of the iGaming
             infrastructure stack. Engage individually or combine into a fully
@@ -226,7 +240,12 @@ export default function EcosystemSection() {
 
       {/* Brand panels */}
       {brands.map((brand) => (
-        <div key={brand.number} id={brand.id} className={`${brand.sectionBg} py-16 md:py-20 px-6 md:px-10`}>
+        <div
+          key={brand.number}
+          id={brand.id}
+          className={`${brand.sectionBg} py-16 md:py-20 px-6 md:px-10`}
+          style={brand.bgImage ? { backgroundImage: `url(${brand.bgImage})`, backgroundSize: "cover", backgroundPosition: "center" } : undefined}
+        >
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
               {/* Content block */}
@@ -237,18 +256,20 @@ export default function EcosystemSection() {
                   >
                     {brand.tag}
                   </span>
-                  <span className="text-xs text-gray-400">{brand.number}</span>
+                  <span className={`text-xs ${brand.textColorMuted ?? "text-gray-400"}`}>{brand.number}</span>
                 </div>
                 <div className="mb-6">{brand.logo}</div>
-                <p className="text-gray-700 leading-relaxed mb-3">
+                <p className={`leading-relaxed mb-3 ${brand.textColor ?? "text-gray-700"}`}>
                   {brand.description}
                 </p>
-                <p className="text-gray-500 text-sm leading-relaxed mb-8">
+                <p className={`text-sm leading-relaxed mb-8 ${brand.textColorMuted ?? "text-gray-500"}`}>
                   {brand.description2}
                 </p>
                 <a
-                  href="#"
+                  href={brand.ctaHref ?? "#"}
                   className={`rounded inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-colors ${brand.ctaBg} ${brand.ctaTextColor} ${brand.ctaHover}`}
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   {brand.ctaText} →
                 </a>
@@ -260,6 +281,7 @@ export default function EcosystemSection() {
                   capabilities={brand.capabilities}
                   accentColor={brand.accentColor}
                   cardBg={brand.cardBg}
+                  textColorMuted={brand.textColorMuted}
                 />
               </AnimateIn>
             </div>

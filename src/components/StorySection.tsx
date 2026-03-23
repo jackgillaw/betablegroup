@@ -14,13 +14,13 @@ export default function StorySection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Left: heading */}
           <AnimateIn from="left">
-            <p className="text-xs tracking-[0.3em] text-gray-400 uppercase mb-6">
-              01 Origin
-            </p>
-            <h2 className="font-black leading-[0.9]">
-              <span className="block text-6xl md:text-7xl text-black">Our</span>
-              <span className="block text-6xl md:text-7xl text-[#aaff00]">Story</span>
-            </h2>
+            <div className="flex flex-col md:flex-row md:items-start md:gap-4 lg:gap-6">
+              <span className="font-black leading-none text-3xl md:text-[6.5rem] lg:text-[8rem] text-[#38bdf8] shrink-0 font-light mb-2 md:mb-0">1</span>
+              <h2 className="font-black leading-[0.9]">
+                <span className="block text-6xl md:text-7xl text-black">Our</span>
+                <span className="block text-6xl md:text-7xl text-[#38bdf8]">Story</span>
+              </h2>
+            </div>
           </AnimateIn>
 
           {/* Right: content */}
@@ -30,7 +30,7 @@ export default function StorySection() {
               <span className="font-normal italic">simple principle.</span>{" "}
               iGaming infrastructure should empower operators, not restrict them.
             </p>
-            <div className="w-12 h-0.5 bg-[#aaff00] my-6" />
+            <div className="w-12 h-0.5 bg-[#38bdf8] my-6" />
             <p className="leading-relaxed mb-4">
               For years the industry has been shaped by rigid legacy platforms
               and fragmented supplier relationships. Operators are forced to
@@ -52,7 +52,7 @@ export default function StorySection() {
               <AnimateIn key={stat.label} delay={i * 100}>
                 <div className="flex justify-center flex-col items-center">
                   <p
-                    className="text-4xl md:text-5xl font-black text-[#aaff00] mb-2"
+                    className="text-4xl md:text-5xl font-black text-[#38bdf8] mb-2"
                     style={{ textShadow: "1px 1px 0px rgba(0,0,0,0.15), 2px 2px 6px rgba(0,0,0,0.1)" }}
                   >
                     {stat.value}

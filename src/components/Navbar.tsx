@@ -88,7 +88,7 @@ export default function Navbar() {
           ))}
           <a
             href="#contact"
-            className="rounded bg-[#aaff00] text-black text-sm font-semibold px-5 py-2 hover:bg-[#99ee00] transition-colors"
+            className="rounded bg-[#38bdf8] text-white text-sm font-semibold px-5 py-2 hover:bg-[#ff3d00] transition-colors"
           >
             Get in Touch
           </a>
@@ -132,7 +132,7 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={() => setMenuOpen(false)}
-            className="rounded inline-block mt-4 bg-[#aaff00] text-black text-sm font-semibold px-5 py-2"
+            className="rounded inline-block mt-4 bg-[#38bdf8] text-black text-sm font-semibold px-5 py-2"
           >
             Get in Touch
           </a>

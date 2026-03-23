@@ -13,7 +13,7 @@ function ScrollIndicator() {
     >
       {/* Animated line */}
       <div className="relative w-8 h-px bg-white/30 overflow-hidden">
-        <div className="absolute inset-0 bg-[#aaff00] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300 ease-out" />
+        <div className="absolute inset-0 bg-[#38bdf8] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300 ease-out" />
       </div>
 
       {/* Label + bouncing arrow */}
@@ -63,7 +63,7 @@ export default function HeroSection() {
         {/* Main heading */}
         <h1 className="font-black leading-[0.88] uppercase mb-10 md:mb-12 text-[6vw] md:text-[6vw]">
           <span className="block text-white">The Stack</span>
-          <span className="block text-[#aaff00]">Behind</span>
+          <span className="block text-[#38bdf8]">Behind</span>
           <span className="block text-white">iGaming.</span>
         </h1>
 

@@ -17,6 +17,7 @@ const companies = [
     role: "Platform",
     color: "#a7cedf",
     textColor: "#000000",
+    href: "https://betable.com/",
   },
   {
     logo: "/assets/newshore-brand-logo.png",
@@ -25,6 +26,7 @@ const companies = [
     role: "Payments",
     color: "#5b6cf9",
     textColor: "#ffffff",
+    href: "https://newshore.com/",
   },
   {
     logo: "/assets/api-brand-logo.png",
@@ -33,6 +35,7 @@ const companies = [
     role: "Games Aggregation",
     color: "#ce9e18",
     textColor: "#ffffff",
+    href: "https://apisgaming.com/",
   },
   {
     logo: "/assets/grace-gaming-brand-logo.png",
@@ -41,6 +44,7 @@ const companies = [
     role: "White Label Services",
     color: "#7c3aed",
     textColor: "#ffffff",
+    href: "https://gracegaming.com/",
   },
 ];
 
@@ -51,17 +55,17 @@ export default function ConnectedSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left */}
           <AnimateIn from="left">
-            <p className="text-xs tracking-[0.3em] text-gray-400 uppercase mb-6">
-              05 Connected
-            </p>
-            <h2 className="font-black leading-[0.9] mb-8">
-              <span className="block text-6xl md:text-7xl text-black">
-                One Group.
-              </span>
-              <span className="block text-6xl md:text-7xl text-[#e8440e]">
-                All Connected.
-              </span>
-            </h2>
+            <div className="flex flex-col md:flex-row md:items-start md:gap-4 lg:gap-6 mb-8">
+              <span className="font-black leading-none text-3xl md:text-[6.5rem] lg:text-[8rem] text-[#e8440e] shrink-0 font-light mb-2 md:mb-0">4</span>
+              <h2 className="font-black leading-[0.9]">
+                <span className="block text-6xl md:text-7xl text-black">
+                  One Group.
+                </span>
+                <span className="block text-6xl md:text-7xl text-[#e8440e]">
+                  All Connected.
+                </span>
+              </h2>
+            </div>
             <p className="text-base md:text-lg text-gray-600 mb-8 leading-relaxed">
               Because Betable, Newshore, APIS Gaming and Grace Gaming operate
               within one Group, we create alignment across technology, payments
@@ -121,7 +125,9 @@ export default function ConnectedSection() {
                   </div>
                   <p className="text-xs  mb-8">{company.role}</p>
                   <a
-                    href="#"
+                    href={company.href ?? "#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="rounded inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2 transition-opacity hover:opacity-80 border-1 border-black/50"
                   >
                     Visit →

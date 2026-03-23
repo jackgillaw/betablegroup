@@ -80,13 +80,13 @@ export default function WhyUsSection() {
     <section id="why-us" className="py-24 md:py-32 px-6 md:px-10 bg-white">
       <div className="max-w-7xl mx-auto">
         <AnimateIn>
-          <p className="text-xs tracking-[0.3em] text-gray-400 uppercase mb-6">
-            03 Purpose
-          </p>
-          <h2 className="font-black leading-[0.9] mb-6">
-            <span className="block text-6xl md:text-7xl text-black">Why We</span>
-            <span className="block text-6xl md:text-7xl text-[#e8440e]">Exist</span>
-          </h2>
+          <div className="flex flex-col md:flex-row md:items-start md:gap-4 lg:gap-6 mb-6">
+            <span className="font-black leading-none text-3xl md:text-[6.5rem] lg:text-[8rem] text-[#e8440e] shrink-0 font-light mb-2 md:mb-0">3</span>
+            <h2 className="font-black leading-[0.9]">
+              <span className="block text-6xl md:text-7xl text-black">Why We</span>
+              <span className="block text-6xl md:text-7xl text-[#e8440e]">Exist</span>
+            </h2>
+          </div>
           <p className="text-base md:text-lg text-gray-600 max-w-md mb-14 leading-relaxed">
             The iGaming market evolves at pace. Operators need infrastructure that
             moves as fast as the markets they serve.

@@ -25,7 +25,7 @@ const contactLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#aaff00] px-6 md:px-10 pt-16 pb-8">
+    <footer className="bg-[#38bdf8] px-6 md:px-10 pt-16 pb-8">
       <div className="max-w-7xl mx-auto">
         {/* Top grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-14">
@@ -40,7 +40,7 @@ export default function Footer() {
                 className="h-7 w-auto mix-blend-multiply"
               />
             </div>
-            <p className="text-sm text-black/60 leading-relaxed">
+            <p className="text-sm text-white leading-relaxed">
               Delivering clarity, control and growth for serious iGaming
               operators worldwide.
             </p>
@@ -48,7 +48,7 @@ export default function Footer() {
 
           {/* Ecosystem */}
           <div>
-            <p className="text-xs tracking-widest text-black/40 uppercase mb-4">
+            <p className="text-xs tracking-widest text-white uppercase mb-4">
               Ecosystem
             </p>
             <ul className="space-y-2">
@@ -56,7 +56,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-sm font-semibold text-black hover:text-black/50 transition-colors"
+                    className="text-sm font-semibold text-black hover:text-black/50 transition-colors hover:underline"
                   >
                     {link.label}
                   </a>
@@ -67,7 +67,7 @@ export default function Footer() {
 
           {/* Navigate */}
           <div>
-            <p className="text-xs tracking-widest text-black/40 uppercase mb-4">
+            <p className="text-xs tracking-widest text-white uppercase mb-4">
               Navigate
             </p>
             <ul className="space-y-2">
@@ -75,7 +75,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-sm font-semibold text-black hover:text-black/50 transition-colors"
+                    className="text-sm font-semibold text-black hover:text-black/50 transition-colors hover:underline"
                   >
                     {link.label}
                   </a>
@@ -86,7 +86,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <p className="text-xs tracking-widest text-black/40 uppercase mb-4">
+            <p className="text-xs tracking-widest text-white uppercase mb-4">
               Contact
             </p>
             <ul className="space-y-2">
@@ -94,7 +94,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-sm font-semibold text-black hover:text-black/50 transition-colors"
+                    className="text-sm font-semibold text-black hover:text-black/50 transition-colors hover:underline"
                   >
                     {link.label}
                   </a>

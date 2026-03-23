@@ -15,17 +15,16 @@ export default function VisionSection() {
       className="py-24 md:py-32 px-6 md:px-10 bg-[#F7F7F5] min-h-screen flex items-center"
     >
       <div className="max-w-7xl mx-auto w-full">
-        <p className="text-xs tracking-[0.3em] text-gray-400 uppercase mb-6">
-          06 Future
-        </p>
-
         {/* Massive display heading */}
-        <h2 className="font-black leading-[0.88] mb-16 md:mb-20">
-          <span className="block text-[6vw] md:text-[6vw] text-black">The</span>
-          <span className="block text-[6vw] md:text-[6vw] text-black">Infrastructure</span>
-          <span className="block text-[6vw] md:text-[6vw] text-black">Partner of Choice</span>
-          <span className="block text-[6vw] md:text-[6vw] text-[#aaff00]">Worldwide.</span>
-        </h2>
+        <div className="flex flex-col md:flex-row md:items-start md:gap-4 lg:gap-6 mb-16 md:mb-20">
+          <span className="font-black leading-none text-3xl md:text-[13.5rem] lg:text-[16rem] text-[#38bdf8] shrink-0 font-light mb-2 md:mb-0">5</span>
+          <h2 className="font-black leading-[0.9]">
+            <span className="block text-6xl md:text-7xl text-black">The</span>
+            <span className="block text-6xl md:text-7xl text-black">Infrastructure</span>
+            <span className="block text-6xl md:text-7xl text-black">Partner of Choice</span>
+            <span className="block text-6xl md:text-7xl text-[#38bdf8]">Worldwide.</span>
+          </h2>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Left: description + CTA */}
@@ -42,7 +41,7 @@ export default function VisionSection() {
               that allows them to scale with confidence.
             </p>
             <div className="flex items-center gap-2 text-xs text-gray-500 tracking-widest mb-8">
-              <span className="w-2 h-2 rounded-full bg-[#aaff00]" />
+              <span className="w-2 h-2 rounded-full bg-[#38bdf8]" />
               <span>CLARITY · CONTROL · GROWTH</span>
             </div>
             <a
@@ -66,7 +65,7 @@ export default function VisionSection() {
                   className="group flex items-center gap-5 py-5 border-b border-gray-200 transition-all duration-200 hover:pl-2"
                 >
                   {/* Bullet */}
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#aaff00] shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#38bdf8] shrink-0" />
 
                   {/* Label */}
                   <span className="flex-1 text-sm font-semibold text-black group-hover:text-gray-500 transition-colors duration-200">
@@ -74,7 +73,7 @@ export default function VisionSection() {
                   </span>
 
                   {/* Arrow slides in on hover */}
-                  <span className="text-[#aaff00] text-sm opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200">
+                  <span className="text-[#38bdf8] text-sm opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200">
                     →
                   </span>
                 </li>
